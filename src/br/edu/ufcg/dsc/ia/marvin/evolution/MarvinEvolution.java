@@ -21,7 +21,7 @@ import br.edu.ufcg.dsc.ia.marvin.infrastructure.EvolutionRegister;
 import br.edu.ufcg.dsc.ia.marvin.util.LocalProperties;
 
 public class MarvinEvolution {
-    private static final int POPULATION_SIZE = 100;
+    private static final int POPULATION_SIZE = 200;
     private static final int ELITISM = (int) Math.ceil(0.1 * POPULATION_SIZE);
     private static final int NUMBER_OF_GENERATIONS_PER_LOOP = 1;
     private static final TerminationCondition TERMINATION_CONDITION =
