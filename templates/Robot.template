@@ -1,4 +1,4 @@
-package br.edu.ufcg.dsc.ia.coppelia.evolution.chromossome;
+package br.edu.ufcg.dsc.ia.marvin.evolution.chromossome;
 
 import java.awt.Color;
 

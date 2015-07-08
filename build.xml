@@ -56,7 +56,7 @@
     </target>
     <target name="jar" depends="build">
         <mkdir dir="${dist.dir}"/>
-        <jar jarfile="${dist.dir}/coppelia.jar" basedir="${bin.dir}"/>
+        <jar jarfile="${dist.dir}/marvin.jar" basedir="${bin.dir}"/>
     </target>
 
     <target name="test" depends="build-test">
@@ -75,7 +75,7 @@
     </target>
 
     <target name="run" depends="jar">
-        <java classname="br.edu.ufcg.dsc.ia.coppelia.evolution.CoppeliaEvolution"
+        <java classname="br.edu.ufcg.dsc.ia.marvin.evolution.MarvinEvolution"
 	 fork="true"
          failonerror="true"
          maxmemory="1024m"
