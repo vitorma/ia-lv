@@ -14,12 +14,12 @@ out/
 .classpath
 
 #robocode
-battle-launcher/battles/duel.battle
-battle-launcher/robots/robot.database
-battle-launcher/config
-battle-launcher/duel.results
+robocode/battles/duel.battle
+robocode/robots/robot.database
+robocode/config
+robocode/duel.results
 
-battle-launcher/robots/sample/SittingDuck.data/count.dat
+robocode/robots/sample/SittingDuck.data/count.dat
 
 src/br/edu/ufcg/dsc/ia/marvin/evolution/chromossome/Marvin?*.java
 src/br/edu/ufcg/dsc/ia/marvin/robot/Marvin*.java
