@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ia-cct" default="build">
+
+
+    <property name="src.dir" location ="src"/>
+    <property name="bin.dir" location ="bin"/>
+    <property name="dist.dir" location ="dist"/>
+    <property name="test.dir" location ="test"/>
+    <property name="lib.dir" location ="lib"/>
+
+    <path id="build.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="test.classpath">
+        <pathelement location="lib/junit4.jar"/>
+        <pathelement location="${bin.dir}"/>
+        <path refid="build.classpath"/>
+    </path>
+
+    <path id="run.classpath">
+        <path refid="build.classpath"/>
+        <pathelement location="${bin.dir}"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${bin.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="build" depends="clean">
+        <mkdir dir="${bin.dir}"/>
+        <javac
+            srcdir="${src.dir}"
+            destdir="${bin.dir}"
+            includeantruntime="false">
+
+            <classpath refid="build.classpath"/>
+
+        </javac>
+    </target>
+
+    <target name="build-test" depends="build">
+        <mkdir dir="${bin.dir}"/>
+        <javac
+            srcdir="${test.dir}"
+            destdir="${bin.dir}"
+            includeantruntime="false">
+
+            <classpath refid="test.classpath"/>
+
+        </javac>
+    </target>
+    <target name="jar" depends="build">
+        <mkdir dir="${dist.dir}"/>
+        <jar jarfile="${dist.dir}/coppelia.jar" basedir="${bin.dir}"/>
+    </target>
+
+    <target name="test" depends="build-test">
+        <junit fork="yes" printsummary="yes" haltonfailure="yes">
+            <classpath refid="test.classpath"/>
+
+            <formatter type="plain" usefile="false" />
+
+            <batchtest>
+                <fileset dir="${test.dir}">
+                    <include name="**/*.java"/>
+                </fileset>
+            </batchtest>
+
+        </junit>
+    </target>
+
+    <target name="run" depends="jar">
+        <java classname="br.edu.ufcg.dsc.ia.coppelia.evolution.CoppeliaEvolution"
+	 fork="true"
+         failonerror="true"
+         maxmemory="1024m"
+         >
+                <classpath refid="run.classpath"/>
+         </java>
+
+
+    </target>
+
+</project>
+

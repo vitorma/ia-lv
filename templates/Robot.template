@@ -1,0 +1,47 @@
+package br.edu.ufcg.dsc.ia.coppelia.evolution.chromossome;
+
+import java.awt.Color;
+
+import robocode.AdvancedRobot;
+import robocode.HitRobotEvent;
+import robocode.HitWallEvent;
+import robocode.ScannedRobotEvent;
+import robocode.HitByBulletEvent;
+
+public class {ROBOT_NAME} extends AdvancedRobot {
+    @Override
+    public void run() {
+        setColors(Color.pink, Color.pink, Color.pink, Color.white, Color.pink);
+
+        while(true) {
+{RUN}        
+            execute();
+        }
+        
+    }
+
+    @Override
+    public void onScannedRobot(ScannedRobotEvent event) {
+{SCANNED_ROBOT}
+        execute();
+    }
+
+    @Override
+    public void onHitWall(HitWallEvent event) {
+{HIT_WALL}
+        execute();
+    }
+
+    @Override
+    public void onHitRobot(HitRobotEvent event) {
+{HIT_ROBOT}
+        execute();
+    }
+
+    @Override
+    public void onHitByBullet(HitByBulletEvent event) {
+{HIT_BY_BULLET}
+        execute();
+    }
+}
+
