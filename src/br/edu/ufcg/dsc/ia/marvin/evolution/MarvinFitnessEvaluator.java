@@ -10,7 +10,7 @@ import br.edu.ufcg.dsc.ia.marvin.battle.Battle;
 import br.edu.ufcg.dsc.ia.marvin.evolution.chromossome.Marvin;
 
 public class MarvinFitnessEvaluator implements FitnessEvaluator<Marvin> {
-    private static final String OPPONENT = "sample.SpinBot";
+    private static final String OPPONENT = "jk.mega.DrussGT 2.0.6";
     private static final BattlefieldSpecification BATTLEFIELD = new BattlefieldSpecification();
     private static final int NUMBER_OF_ROUNDS = 20;
 
